@@ -6,9 +6,9 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "eris": "^0.7.2"
+    "eris": "^0.16.1"
   },
   "engines": {
-    "node": "8.x"
+    "node": "16"
   }
 }
