@@ -7,9 +7,10 @@ bot.on('ready', () => {                                // When the bot is ready
 });
  
 bot.on('messageCreate', (msg) => {                     // When a message is created
-    if(msg.content.includes('1337')) {                 // If the message content includes "1337"
-        bot.createMessage(msg.channel.id, 'damn it');  // Send a message in the same channel with "damn it"
-    }
+if(msg.content.includes('Hello!')) {                 // If the message content includes "1337"
+bot.createMessage(msg.channel.id, 'Hi! How are you?');  // Send a message in the same channel with "damn it"
+}
+else if (msg.content.startsWith(""))
 });
  
 bot.connect();                                         // Get the bot to connect to Discord
