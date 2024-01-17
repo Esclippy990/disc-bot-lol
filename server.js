@@ -11,7 +11,7 @@ if(msg.content.includes('Hello!')) {                 // If the message content i
 bot.createMessage(msg.channel.id, 'Hi! How are you?');  // Send a message in the same channel with "damn it"
 }
 else if (msg.content.startsWith('/servers')) {
-bot.createMessage(msg.channel.id, '21 servers:');
+bot.createMessage(msg.channel.id, '17 servers:');
 bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#us - Siege Test');
 bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#lt - 2TDM');
 bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#wxc - CRAZY ARRAS DEV SERVER');
@@ -29,7 +29,6 @@ bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#wu - Private 
 bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#su - Private 2TDM');
 bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#lm - Skinwalkers');
 bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#sk - 4TDM');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#lo - 1TDM');
 }
 });
  
