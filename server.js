@@ -24,7 +24,12 @@ bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#wz - Sandbox'
 bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#sz - Sandbox');
 bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#wf - 4TDM');
 bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#sf - 2TDM');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/# - ');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#au - Private FFA');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#wu - Private 4TDM');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#su - Private 2TDM');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#lm - Skinwalkers');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#sk - 4TDM');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#lo - 1TDM');
 }
 });
  
