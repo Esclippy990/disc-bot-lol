@@ -18,12 +18,20 @@ bot.createMessage(msg.channel.id, '**Eval Output**\n```'+output+'```')
 } else if (msg.content.startsWith('/users')) {
 bot.createMessage(msg.channel.id, '**USERS KNOWN**\n```1140485340977692747 - @sh4d0wl0rd3_52746 AKA Ralsei/MLG\n741024771034317001 - @itsyeboitai aka token leaker\n1190727236911910963 - @antivanguard\n406204826003963904 - @umm yea idk 🤯```\nRequested by ' + msg.author)
 } else if (msg.content.startsWith('/getmockup')) {
-axios.get('https://remarkable-serious-shark.glitch.me/mockups.json')
+/*axios.get('https://remarkable-serious-shark.glitch.me/mockups.json')
   .then(response => {
     const data = response.data;
-    console.log(data);
+   
+  })*/
+  
+  axios.get(encodeURI('https://remarkable-serious-shark.glitch.me/mockups.json'))
+  .then(response => {
+    const data = response.data;
+    bot.createMessage('**SERVER MOCKUP**\n```' + data + '```')
   })
-//bot.createMessage('**SERVER MOCKUP**\n```' + playerCount + '```')
+  .catch(error => {
+    bot.createMessage('**Error**\n```' + error + '```')
+  });
 }
 });
  
