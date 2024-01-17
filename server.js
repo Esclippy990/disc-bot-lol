@@ -10,10 +10,8 @@ bot.on('messageCreate', (msg) => {                     // When a message is crea
 if(msg.content.includes('Hello!')) {                 // If the message content includes "1337"
 bot.createMessage(msg.channel.id, 'Hi! How are you?');  // Send a message in the same channel with "damn it"
 }
-else if (msg.content.startsWith('/servers')) {
-bot.createMessage(msg.channel.id, '17 servers:');
-bot.createMessage(msg.channel.id, '```rose-horse-freighter.glitch.me/#us\nrose-horse-freighter.glitch.me/#lt\nrose-horse-freighter.glitch.me/#wxc\nrose-horse-freighter.glitch.me/#x\nrose-horse-freighter.glitch.me/#o\nrose-horse-freighter.glitch.me/#c\nrose-horse-freighter.glitch.me/#af\nrose-horse-freighter.glitch.me/#az```');
-//rose-horse-freighter.glitch.me/#wz\nrose-horse-freighter.glitch.me/#sz\nrose-horse-freighter.glitch.me/#wf\nrose-horse-freighter.glitch.me/#sf\nrose-horse-freighter.glitch.me/#au\nrose-horse-freighter.glitch.me/#wu\nrose-horse-freighter.glitch.me/#su\nrose-horse-freighter.glitch.me/#lm
+else if (msg.content.includes('/servers')) {
+bot.createMessage(msg.channel.id, '17 servers:\n```rose-horse-freighter.glitch.me/#us, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#lt, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#wxc, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#x, hidden: '+ true + ', ended: ' + true + ', event\nrose-horse-freighter.glitch.me/#o, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#c, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#af, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#az, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#wz, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#sz, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#wf, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#sf, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#au, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#wu, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#su, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#lm\nrose-horse-freighter.glitch.me/#sk```');
 } else if (msg.content.startsWith('/id')) {}
 });
  
