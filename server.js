@@ -16,6 +16,14 @@ const output = eval(command)
 bot.createMessage(msg.channel.id, '**Eval Output**\n```'+output+'```')
 } else if (msg.content.startsWith('/users')) {
 bot.createMessage(msg.channel.id, '**USERS KNOWN**\n```1140485340977692747 - @sh4d0wl0rd3_52746 AKA Ralsei/MLG\n741024771034317001 - @itsyeboitai aka token leaker\n1190727236911910963 - @antivanguard\n406204826003963904 - @umm yea idk 🤯```\nRequested by ' + msg.author)
+} else if (msg.content.startsWith('/players ')) {
+const get = msg.content.substring(9)
+switch(get) {
+case '#us':
+//const response = await axios.get('https://example.com/playercount');
+//const playerCount = response.data.count;
+break;
+}
 }
 });
  
