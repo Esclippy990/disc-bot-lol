@@ -12,24 +12,9 @@ bot.createMessage(msg.channel.id, 'Hi! How are you?');  // Send a message in the
 }
 else if (msg.content.startsWith('/servers')) {
 bot.createMessage(msg.channel.id, '17 servers:');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#us - Siege Test');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#lt - 2TDM');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#wxc - CRAZY ARRAS DEV SERVER');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#x - Unknown');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#o - Developer Server');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#c - Developer Server');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#af - FFA');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#az - Sandbox');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#wz - Sandbox');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#sz - Sandbox');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#wf - 4TDM');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#sf - 2TDM');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#au - Private FFA');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#wu - Private 4TDM');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#su - Private 2TDM');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#lm - Skinwalkers');
-bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#sk - 4TDM');
-}
+bot.createMessage(msg.channel.id, '```rose-horse-freighter.glitch.me/#us\nrose-horse-freighter.glitch.me/#lt\nrose-horse-freighter.glitch.me/#wxc\nrose-horse-freighter.glitch.me/#x\nrose-horse-freighter.glitch.me/#o\nrose-horse-freighter.glitch.me/#c\nrose-horse-freighter.glitch.me/#af\nrose-horse-freighter.glitch.me/#az```');
+//rose-horse-freighter.glitch.me/#wz\nrose-horse-freighter.glitch.me/#sz\nrose-horse-freighter.glitch.me/#wf\nrose-horse-freighter.glitch.me/#sf\nrose-horse-freighter.glitch.me/#au\nrose-horse-freighter.glitch.me/#wu\nrose-horse-freighter.glitch.me/#su\nrose-horse-freighter.glitch.me/#lm
+} else if (msg.content.startsWith('/id')) {}
 });
  
 bot.connect();                                         // Get the bot to connect to Discord
