@@ -10,7 +10,22 @@ bot.on('messageCreate', (msg) => {                     // When a message is crea
 if(msg.content.includes('Hello!')) {                 // If the message content includes "1337"
 bot.createMessage(msg.channel.id, 'Hi! How are you?');  // Send a message in the same channel with "damn it"
 }
-else if (msg.content.startsWith(""))
+else if (msg.content.startsWith('/servers')) {
+bot.createMessage(msg.channel.id, '21 servers:');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#us - Siege Test');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#lt - 2TDM');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#wxc - CRAZY ARRAS DEV SERVER');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#x - Unknown');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#o - Developer Server');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#c - Developer Server');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#af - FFA');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#az - Sandbox');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#wz - Sandbox');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#sz - Sandbox');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#wf - 4TDM');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/#sf - 2TDM');
+bot.createMessage(msg.channel.id, 'rose-horse-freighter.glitch.me/# - ');
+}
 });
  
 bot.connect();                                         // Get the bot to connect to Discord
