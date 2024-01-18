@@ -24,7 +24,25 @@ const output2 = eval(command)
       text: 'Requested by ' + msg.author.username,
     },
   };
- bot.createMessage(msg.channel.id, { embed });
+  const embed2 = {
+    title: 'Eval Output',
+    color: 0x7289DA, //green: 0x00FF00, red: 0xFF0000
+    fields: [
+      { name: '```Code too long```', value: '```'+output2+'```' },
+    ],
+    footer: {
+      text: 'Requested by ' + msg.author.username,
+    },
+  };
+embed.fields.forEach(field => {
+  if (field.name.length > 255) {
+  bot.createMessage(msg.channel.id, { embed2 });
+  } else {
+    bot.createMessage(msg.channel.id, { embed });
+  }
+});
+//bot.createMessage(msg.channel.id, { embed });
+
 //bot.createMessage(msg.channel.id, '**Eval Output**\n```'+output+'```')
 } else if (msg.content.startsWith('/users')) {
 bot.createMessage(msg.channel.id, '**USERS KNOWN**\n```1140485340977692747 - @sh4d0wl0rd3_52746 AKA Ralsei/MLG\n741024771034317001 - @itsyeboitai aka token leaker\n1190727236911910963 - @antivanguard\n406204826003963904 - @umm yea idk 🤯```\nRequested by ' + msg.author)
