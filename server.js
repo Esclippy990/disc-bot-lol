@@ -13,8 +13,20 @@ bot.createMessage(msg.channel.id, '17 servers:\n```rose-horse-freighter.glitch.m
 } else if (msg.content.includes('/eval')) {
 if (msg.content.includes('@bot1197118174164951100 ')) {msg.content.substring('@bot1197118174164951100 ')}
 const command = msg.content.substring(6)
-const output = eval(command)
-bot.createMessage(msg.channel.id, '**Eval Output**\n```'+output+'```')
+const output2 = eval(command)
+const output = {
+      title: 'Eval Output',
+      description: 'Output:',
+      color: 'green', // Hex color code
+      fields: [
+        { name: 'Output', value: 'l' },
+      ],
+      footer: {
+        text: 'Embed Footer',
+      },
+    };
+  bot.createMessage(msg.channel.id,  output );
+//bot.createMessage(msg.channel.id, '**Eval Output**\n```'+output+'```')
 } else if (msg.content.startsWith('/users')) {
 bot.createMessage(msg.channel.id, '**USERS KNOWN**\n```1140485340977692747 - @sh4d0wl0rd3_52746 AKA Ralsei/MLG\n741024771034317001 - @itsyeboitai aka token leaker\n1190727236911910963 - @antivanguard\n406204826003963904 - @umm yea idk 🤯```\nRequested by ' + msg.author)
 } else if (msg.content.startsWith('/getmockup')) {
