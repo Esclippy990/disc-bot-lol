@@ -14,17 +14,32 @@ bot.createMessage(msg.channel.id, '17 servers:\n```rose-horse-freighter.glitch.m
 if (msg.content.includes('@bot1197118174164951100 ')) {msg.content.substring('@bot1197118174164951100 ')}
 const command = msg.content.substring(6)
 const output2 = eval(command)
+if (command.length > 255) {
  const embed = {
     title: 'Eval Output',
     color: 0x7289DA, //green: 0x00FF00, red: 0xFF0000
     fields: [
-      { name: 'Output:', value: '```'+output2+'```' },
+      { name: '```Code too long```', value: '```'+output2+'```' },
     ],
     footer: {
       text: 'Requested by ' + msg.author.username,
     },
   };
-bot.createMessage(msg.channel.id, { embed });
+     bot.createMessage(msg.channel.id, { embed });
+} else {
+  const embed = {
+    title: 'Eval Output',
+    color: 0x7289DA, //green: 0x00FF00, red: 0xFF0000
+    fields: [
+      { name: '```'+command+'```', value: '```'+output2+'```' },
+    ],
+    footer: {
+      text: 'Requested by ' + msg.author.username,
+    },
+  };
+  bot.createMessage(msg.channel.id, { embed });
+}
+ 
 
 //bot.createMessage(msg.channel.id, '**Eval Output**\n```'+output+'```')
 } else if (msg.content.startsWith('/users')) {
