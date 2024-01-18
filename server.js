@@ -24,7 +24,17 @@ const output2 = eval(command)
       text: 'Requested by ' + msg.author.username,
     },
   };
-
+  const embed2 = {
+    title: 'Eval Output',
+    color: 0x7289DA, //green: 0x00FF00, red: 0xFF0000
+    fields: [
+      { name: '```'+command+'```'},
+    ],
+    footer: {
+      text: 'Requested by ' + msg.author.username,
+    },
+  };
+  if ()
   bot.createMessage(msg.channel.id, { embed });
 //bot.createMessage(msg.channel.id, '**Eval Output**\n```'+output+'```')
 } else if (msg.content.startsWith('/users')) {
