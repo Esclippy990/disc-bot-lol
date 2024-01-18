@@ -16,7 +16,7 @@ const command = msg.content.substring(6)
 const output2 = eval(command)
  const embed = {
     title: 'Eval Output',
-    color: 0x006400, //green: 0x00FF00, red: 0xFF0000
+    color: 0x00FF00, //green: 0x00FF00, red: 0xFF0000
     fields: [
       { name: '```'+command+'```', value: '```'+output2+'```' },
     ],
