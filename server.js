@@ -9,23 +9,35 @@ bot.on('ready', () => {                                // When the bot is ready
  
 bot.on('messageCreate', (msg) => {                     // When a message is created
 if (msg.content.includes('/servers')) {
-  /* const embed = {
+  const servers = {
     title: '17 Servers',
     color: 0x7289DA, //green: 0x00FF00, red: 0xFF0000
     fields: [
-      { value: 'Server ```#us```, V=0' },
-      { value: 'Server ```#lt```, V=0' },
-      { value: 'Server ```#wxc```, V=1' },
-      { value: 'Event server ```#x```, V=1, Ended=```true```' },
-      { value: 'Private server ```#o```, V=1' },
-      { value: 'Private server ```#c```, V=1' },
-      { value: 'Server ```#af```, V=0' },
+      { name: ' ', value: 'Server ```#us```, V=0' },
+      { name: ' ', value: 'Server ```#lt```, V=0' },
+      { name: ' ', value: 'Server ```#wxc```, V=1' },
+      { name: ' ', value: 'Event server ```#x```, V=1, Ended=```true```' },
+      { name: ' ', value: 'Private server ```#o```, V=1' },
+      { name: ' ', value: 'Private server ```#c```, V=1' },
+      { name: ' ', value: 'Server ```#af```, V=0' },
+      { name: ' ', value: 'Server ```#sf```, V=0' },
+      { name: ' ', value: 'Server ```#wf```, V=0' },
+      { name: ' ', value: 'Server ```#az```, V=1' },
+      { name: ' ', value: 'Server ```#sz```, V=1' },
+      { name: ' ', value: 'Server ```#wz```, V=0' },
+      { name: ' ', value: 'Private server ```#au [Not working]```, V=1' },
+      { name: ' ', value: 'Private server ```#su [Not working]```, V=1' },
+      { name: ' ', value: 'Private server ```#wu [Not working]```, V=1' },
+      { name: ' ', value: 'Server ```#lm [Not working]```, V=0' },
+      { name: ' ', value: 'Server ```#sk```, V=0' },
+      { name: ' ', value: 'Private server ```#wm```, V=1' },
     ],
     footer: {
       text: 'Requested by ' + msg.author.username,
     },
-  };*/
-bot.createMessage(msg.channel.id, '17 servers:\n```rose-horse-freighter.glitch.me/#us, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#lt, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#wxc, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#x, hidden: '+ true + ', ended: ' + true + ', event\nrose-horse-freighter.glitch.me/#o, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#c, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#af, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#az, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#wz, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#sz, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#wf, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#sf, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#au, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#wu, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#su, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#lm, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#sk, hidden: '+ false + ',```');
+  };
+bot.createMessage(msg.channel.id, { servers });
+  //bot.createMessage(msg.channel.id, '17 servers:\n```rose-horse-freighter.glitch.me/#us, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#lt, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#wxc, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#x, hidden: '+ true + ', ended: ' + true + ', event\nrose-horse-freighter.glitch.me/#o, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#c, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#af, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#az, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#wz, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#sz, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#wf, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#sf, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#au, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#wu, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#su, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#lm, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#sk, hidden: '+ false + ',```');
 } else if (msg.content.includes('/eval')) {
 if (msg.content.includes('@bot1197118174164951100#4315')) {msg.content.substring('@bot1197118174164951100#4315')}
 const command = msg.content.substring(6)
