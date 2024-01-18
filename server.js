@@ -18,30 +18,13 @@ const output2 = eval(command)
     title: 'Eval Output',
     color: 0x7289DA, //green: 0x00FF00, red: 0xFF0000
     fields: [
-      { name: '```'+command+'```', value: '```'+output2+'```' },
+      { name: 'Output:', value: '```'+output2+'```' },
     ],
     footer: {
       text: 'Requested by ' + msg.author.username,
     },
   };
-  const embed2 = {
-    title: 'Eval Output',
-    color: 0x7289DA, //green: 0x00FF00, red: 0xFF0000
-    fields: [
-      { name: '```Code too long```', value: '```'+output2+'```' },
-    ],
-    footer: {
-      text: 'Requested by ' + msg.author.username,
-    },
-  };
-embed.fields.forEach(field => {
-  if (field.name.length > 255) {
-  bot.createMessage(msg.channel.id, { embed2 });
-  } else {
-    bot.createMessage(msg.channel.id, { embed });
-  }
-});
-//bot.createMessage(msg.channel.id, { embed });
+bot.createMessage(msg.channel.id, { embed });
 
 //bot.createMessage(msg.channel.id, '**Eval Output**\n```'+output+'```')
 } else if (msg.content.startsWith('/users')) {
