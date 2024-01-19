@@ -15,13 +15,31 @@ if (msg.content.includes('/servers')) {
   fields: [
     { name: '```#us```', value: 'Siege Test' },
     { name: '```#lt```', value: '2TDM' },
-    { name: 'Field 3', value: 'Value 3' }
+    { name: '```#wxc```', value: 'Event' },
+    { name: '```#x```', value: 'Winter Event' },
+    { name: '```#o```', value: 'Developer Server' },
+    { name: '```#c```', value: 'Developer Server' },
+    { name: '```#af```', value: 'FFA' },
+    { name: '```#sf```', value: '2TDM' },
+    { name: '```#wf```', value: '4TDM' },
+    { name: '```#az```', value: 'Sandbox' },
+    { name: '```#sz```', value: 'Sandbox' },
+    { name: '```#wz```', value: 'Sandbox' },
+    { name: '```#au```', value: 'Private FFA' },
+    { name: '```#su```', value: 'Private 2TDM' },
+    { name: '```#wu```', value: 'Private 4TDM' },
+    { name: '```#lm```', value: 'Skinwalkers' },
+    { name: '```#wm```', value: 'Limbo' },
+    { name: '```#sk```', value: '4TDM' },
   ],
   footer: {
     text: 'Requested by ' + msg.author.username,
   }
 };
+bot.createMessage(msg.channel.id, { embed });
 //bot.createMessage(msg.channel.id, '18 servers:\n```rose-horse-freighter.glitch.me/#us, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#lt, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#wxc, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#x, hidden: '+ true + ', ended: ' + true + ', event\nrose-horse-freighter.glitch.me/#o, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#c, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#af, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#az, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#wz, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#sz, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#wf, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#sf, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#au, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#wu, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#su, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#lm, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#sk, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#wm, hidden: ' + true + '```');
+} else if (msg.content === '@bot1197118174164951100') {
+bot.createMessage(msg.channel.id, 'Hello, @' + msg.author.username + '!')
 } else if (msg.content.includes('/eval')) {
 if (msg.content.includes('@bot1197118174164951100#4315')) {msg.content.substring('@bot1197118174164951100#4315')}
 const command = msg.content.substring(6)
