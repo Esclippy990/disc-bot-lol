@@ -43,7 +43,19 @@ if (command.length > 255) {
 
 //bot.createMessage(msg.channel.id, '**Eval Output**\n```'+output+'```')
 } else if (msg.content.startsWith('/users')) {
-bot.createMessage(msg.channel.id, '**USERS KNOWN**\n```1140485340977692747 - @sh4d0wl0rd3_52746 AKA Ralsei/MLG\n741024771034317001 - @itsyeboitai aka token leaker\n1190727236911910963 - @antivanguard\n406204826003963904 - @umm yea idk 🤯```\nRequested by ' + msg.author)
+  const users = {
+    title: 'Users Known/Met in ```arras.io```:#ev/#ov/#wv/#cv',
+    color: 0x7289DA, //green: 0x00FF00, red: 0xFF0000
+    fields: [
+      { name: '```1140485340977692747```', value: '```@sh4d0wl0rd3_52746``` AKA Ralsei/MLG' },
+      { name2: '```741024771034317001```', value2: '```@itsyeboitai``` (infamous as a ||```token leaker```||).' },
+      { name3: '```1190727236911910963```', value3: '```@antivanguard``` (he wanted to keep disc secret)' },
+    ],
+    footer: {
+      text: 'Requested by ' + msg.author.username,
+    },
+  };
+//bot.createMessage(msg.channel.id, '**USERS KNOWN**\n```1140485340977692747 - @sh4d0wl0rd3_52746 AKA Ralsei/MLG\n741024771034317001 - @itsyeboitai aka token leaker\n1190727236911910963 - @antivanguard\n406204826003963904 - @umm yea idk 🤯```\nRequested by ' + msg.author)
 } else if (msg.content.startsWith('/getmockup')) {
 /*axios.get('https://remarkable-serious-shark.glitch.me/mockups.json')
   .then(response => {
