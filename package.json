@@ -1,9 +1,9 @@
 {
-  "name": "discord-1337-bot",
+  "name": "rose-horse-freighter-bot",
   "version": "0.0.1",
   "main": "server.js",
   "scripts": {
-    "start": "node server"
+    "start": "node server.js"
   },
   "dependencies": {
     "axios": "^1.6.5",

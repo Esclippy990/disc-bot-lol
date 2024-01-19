@@ -63,3 +63,7 @@ bot.createMessage(msg.channel.id, '**USERS KNOWN**\n```1140485340977692747 - @sh
 });
  
 bot.connect();                                         // Get the bot to connect to Discord
+const http = require('http'); 
+setInterval(() => { 
+http.get('http://ruddy-aromatic-authorization.glitch.me/');
+}, 280000);
