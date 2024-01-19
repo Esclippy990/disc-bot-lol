@@ -27,7 +27,6 @@ if (command.length > 255) {
   };
      bot.createMessage(msg.channel.id, { embed });
 } else {
-  try {}
   const embed = {
     title: 'Eval Output',
     color: 0x7289DA, //green: 0x00FF00, red: 0xFF0000
@@ -58,7 +57,7 @@ bot.createMessage(msg.channel.id, '**USERS KNOWN**\n```1140485340977692747 - @sh
     bot.createMessage('**SERVER MOCKUP**\n```' + data + '```')
   })
   .catch(error => {
-    bot.createMessage('**Error**\n```' + error + '```')
+    bot.createMessage('**Error**\n```' + error.message + '```')
   });
 }
 });
