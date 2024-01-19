@@ -27,6 +27,7 @@ if (command.length > 255) {
   };
      bot.createMessage(msg.channel.id, { embed });
 } else {
+  try {}
   const embed = {
     title: 'Eval Output',
     color: 0x7289DA, //green: 0x00FF00, red: 0xFF0000
@@ -65,5 +66,5 @@ bot.createMessage(msg.channel.id, '**USERS KNOWN**\n```1140485340977692747 - @sh
 bot.connect();                                         // Get the bot to connect to Discord
 const http = require('http'); 
 setInterval(() => { 
-http.get('http://rose-horse-freighter-bot.glitch.me/');
-}, 280000);
+http.get('http://harmless-thread-serpent.glitch.me/');
+}, 10000);
