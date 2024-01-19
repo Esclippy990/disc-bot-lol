@@ -41,8 +41,6 @@ bot.createMessage(msg.channel.id, { embed });
 } else if (msg.content.startsWith('Hello')) {
 bot.createMessage(msg.channel.id, 'Hi, @' + msg.author.username + '! 😄')
 } else if (msg.content.includes('/eval')) {
-  if (msg.author === '[User 1193882484727885884]') {
-if (msg.content.includes('@bot1197118174164951100#4315')) {msg.content.substring('@bot1197118174164951100#4315')}
 const command = msg.content.substring(6)
 const output2 = eval(command)
 if (command.length > 255) {
@@ -73,18 +71,7 @@ if (command.length > 255) {
  
 
 //bot.createMessage(msg.channel.id, '**Eval Output**\n```'+output+'```')
-} else {
-const embed = {
-    title: 'Error',
-    color: 0xFF0000, //green: 0x00FF00, red: 0xFF0000
-    fields: [
-      { name: '', value: '' },
-    ],
-    footer: {
-      text: 'Requested by ' + msg.author.username,
-    },
-  };
-}} else if (msg.content.includes('/users')) {
+} else if (msg.content.includes('/users')) {
   const embed = {
     title: 'Users Known/Met in ```arras.io```:#ev/#ov/#wv/#cv',
     color: 0x7289DA, //green: 0x00FF00, red: 0xFF0000
