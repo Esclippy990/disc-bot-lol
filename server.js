@@ -80,6 +80,7 @@ if (command.length > 255) {
       { name: '```741024771034317001```', value: '```@itsyeboitai``` (infamous as a ||token leaker||).' },
       { name: '```1190727236911910963```', value: '```@antivanguard``` (he wanted to keep disc secret)' },
       { name: '```406204826003963904```', value: '```@umm yea idk 🤯``` was randomly found in discord' },
+      { name: '```854394077708943450```', value: '```@that whar dude youknow``` (@yay123)' }
     ],
     footer: {
       text: 'Requested by ' + msg.author.username,
