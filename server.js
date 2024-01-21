@@ -100,21 +100,6 @@ if (command.length > 255) {
   }
 };
 bot.createMessage(msg.channel.id, { embed });
-} else if (msg.content.startsWith('/getmockup')) {
-/*axios.get('https://remarkable-serious-shark.glitch.me/mockups.json')
-  .then(response => {
-    const data = response.data;
-   
-  })*/
-  
-  axios.get(encodeURI('https://remarkable-serious-shark.glitch.me/mockups.json'))
-  .then(response => {
-    const data = response.data;
-    bot.createMessage('**SERVER MOCKUP**\n```' + data + '```')
-  })
-  .catch(error => {
-    bot.createMessage('**Error**\n```' + error.message + '```')
-  });
 }
 });
  
