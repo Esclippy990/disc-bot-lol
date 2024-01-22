@@ -145,7 +145,3 @@ bot.createMessage(msg.channel.id, { embed });
 });
  
 bot.connect();                                         // Get the bot to connect to Discord
-const http = require('http'); 
-setInterval(() => { 
-http.get('http://harmless-thread-serpent.glitch.me/');
-}, 10000);
