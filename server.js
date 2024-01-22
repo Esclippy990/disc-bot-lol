@@ -44,14 +44,16 @@ bot.createMessage(msg.channel.id, 'Hi, @' + msg.author.username + '! 😄')
   if (msg.channel.id === 1194605780985466884) {
     const embed = {
         title: 'Error',
-        description: 'Messages can ',
         color: 0xFF0000,
+        fields: [
+          { name: 'The eval command can only be used in direct messages', value: `To prevent crashes, the eval command can only be used in the bot's DMS.` },
+        ],
         footer: {
           text: 'Requested by ' + msg.author.username,
         },
       };
-  bot.createMessage()
-  }
+  bot.createMessage(msg.channel.id, { embed })
+  } else
 try {
     const command = msg.content.substring(6)
     const output2 = eval(command);
