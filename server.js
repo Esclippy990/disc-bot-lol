@@ -122,7 +122,8 @@ try {
       { name: '```1190727236911910963```', value: '```@antivanguard``` (he wanted to keep disc secret)' },
       { name: '```406204826003963904```', value: '```@umm yea idk 🤯``` was randomly found in discord' },
       { name: '```854394077708943450```', value: '```@that whar dude youknow``` (@yay123)' },
-      { name: '```705799352270061618```', value: '```@1s6510``` (@1s6510)' }
+      { name: '```705799352270061618```', value: '```@1s6510``` (@1s6510)' },
+      { name: '```676537605478809622```', value: '```@clinically insane (goofy) cat~``` (@.cate.)'}
     ],
     footer: {
       text: 'Requested by ' + msg.author.username,
