@@ -9,7 +9,9 @@ bot.on('ready', () => {                                // When the bot is ready
 });
  
 bot.on('messageCreate', (msg) => {                     // When a message is created
+if (msg.author.id !== '1197118174164951100' && !msg.content.startsWith('/eval') && !msg.content.startsWith('/messagelogs')) {
 messageHistory.push(msg.author.username+': '+msg.content)
+}
 if (msg.content.includes('/servers')) {
   const embed = {
   title: '18 Servers',
@@ -56,6 +58,16 @@ if (msg.author.id !== '1193882484727885884') {
       };
   bot.createMessage(msg.channel.id, { embed })
   } else {
+    if (messageHistory === []) {
+    const embed = {
+        title: 'Message logs',
+        color: 0xFFA500,
+        footer: {
+          text: 'Requested by ' + msg.author.username,
+        },
+      };
+  bot.createMessage(msg.channel.id, { embed })
+    } else {
     const embed = {
         title: 'Message logs',
         description: "```" + messageHistory.join("\n") + "```",
@@ -65,6 +77,7 @@ if (msg.author.id !== '1193882484727885884') {
         },
       };
   bot.createMessage(msg.channel.id, { embed })
+    }
   }
 } else if (msg.content.includes('/eval')) {
   if (msg.channel.id === '1194605780985466884') {
