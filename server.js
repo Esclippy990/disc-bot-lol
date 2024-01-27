@@ -145,7 +145,7 @@ bot.createMessage(msg.channel.id, 'Hi, @' + msg.author.username + '! 😄')
   title: 'Pinging the bot',
   color: 0x7289DA, // You can set the color using a hex code or a decimal value
   fields: [
-    { name: '```ping```', value: 'Pong! 😄' },
+    { name: '```ping```', value: '<@'+msg.author.id+'>, Pong! 😄' },
   ],
   footer: {
     text: 'Requested by ' + msg.author.username,
