@@ -10,7 +10,7 @@ bot.on('ready', () => {                                // When the bot is ready
  
 bot.on('messageCreate', (msg) => {                     // When a message is created
 if (msg.author.id !== '1197118174164951100' && !msg.content.startsWith('/eval') && !msg.content.startsWith('/messagelogs')) {
-messageHistory.push(msg.author.username+': '+msg.content)
+messageHistory.push('User ID: ' + msg.author.id + ', ' + msg.author.username+': '+msg.content)
 }
 if (msg.content.includes('/servers')) {
   const embed = {
@@ -70,7 +70,7 @@ if (msg.author.id !== '1193882484727885884') {
     } else {
     const embed = {
         title: 'Message logs',
-        description: "```" + messageHistory.join("\n") + "```",
+        description: "```" + messageHistory.join("\n") + "\nThese are the message logs. If you want to know the users, type <@(the numbers at the start)>.```",
         color: 0x7289DA,
         footer: {
           text: 'Requested by ' + msg.author.username,
