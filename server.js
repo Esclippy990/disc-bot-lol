@@ -171,7 +171,8 @@ if (msg.author.id !== '1193882484727885884') {
       { name: '```406204826003963904```', value: '```@umm yea idk 🤯``` was randomly found in discord' },
       { name: '```854394077708943450```', value: '```@that whar dude youknow``` (@yay123)' },
       { name: '```705799352270061618```', value: '```@1s6510``` (@1s6510)' },
-      { name: '```676537605478809622```', value: '```@clinically insane (goofy) cat~``` (@.cate.)'}
+      { name: '```676537605478809622```', value: '```@clinically insane (goofy) cat~``` (@.cate.)'},
+      { name: '```1136804050231361667```', value: '```@Nexo_Ninja``` (@typhoon_123_85843)' }
     ],
     footer: {
       text: 'Requested by ' + msg.author.username,
