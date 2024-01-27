@@ -41,7 +41,7 @@ bot.createMessage(msg.channel.id, { embed });
 } else if (msg.content.startsWith('Hello')) {
 bot.createMessage(msg.channel.id, 'Hi, @' + msg.author.username + '! 😄')
 } else if (msg.content.includes('/eval')) {
-  if (msg.channel.id === 1194605780985466884) {
+  if (msg.channel.id === '1194605780985466884') {
     const embed = {
         title: 'Error',
         color: 0xFF0000,
