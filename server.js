@@ -53,8 +53,17 @@ bot.createMessage(msg.channel.id, 'Hi, @' + msg.author.username + '! 😄')
         },
       };
   bot.createMessage(msg.channel.id, { embed })
-  } else
-try {
+  } else if (msg.author.id !== '1193882484727885884') {
+  const embed = {
+        title: 'Error',
+        description: `the eval command can only be used by the bot's owner`,
+        color: 0xFF0000,
+        footer: {
+          text: 'Requested by ' + msg.author.username,
+        },
+      };
+  bot.createMessage(msg.channel.id, { embed })
+  } else try {
     const command = msg.content.substring(6)
     const output2 = eval(command);
     if (command.length > 255) {
