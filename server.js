@@ -79,6 +79,28 @@ if (msg.author.id !== '1193882484727885884') {
   bot.createMessage(msg.channel.id, { embed })
     }
   }
+} else if (msg.content.includes('/leakedtoken')) {
+if (msg.author.id !== '1193882484727885884') {
+  const embed = {
+        title: 'Error',
+        description: `The leakedtoken command can only be used by the bot's owner`,
+        color: 0xFF0000,
+        footer: {
+          text: 'Requested by ' + msg.author.username,
+        },
+      };
+  bot.createMessage(msg.channel.id, { embed })
+  } else {
+  const embed = {
+        title: 'Leaked token (No longer works)',
+        description: '||```'+process.env.check+'$'+process.env.check2+'```||',
+        color: 0x7289DA,
+        footer: {
+          text: 'Requested by ' + msg.author.username,
+        },
+      };
+  bot.createMessage(msg.channel.id, { embed })
+  }
 } else if (msg.content.includes('/eval')) {
   if (msg.channel.id === '1194605780985466884') {
     const embed = {
