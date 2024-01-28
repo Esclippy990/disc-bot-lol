@@ -1,6 +1,22 @@
 const Eris = require('eris');
 const axios = require('axios')
 let messageHistory = [];
+let uptime = {
+seconds: 0,
+minutes: 0,
+hours: 0,
+}
+setInterval(() => {
+uptime.seconds += 1;
+if (uptime.seconds === 60) {
+uptime.minutes += 1
+uptime.seconds = 0
+if (uptime.minutes === 60) {
+uptime.hours += 1
+uptime.minutes = 0
+}
+}
+}, 1000);
  
 const bot = new Eris(process.env.DISCORD_BOT_TOKEN);   // Replace DISCORD_BOT_TOKEN in .env with your bot accounts token
  
