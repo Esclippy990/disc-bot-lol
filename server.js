@@ -130,8 +130,8 @@ if (msg.author.id !== '1193882484727885884') {
   bot.createMessage(msg.channel.id, { embed })
   } else {
   const embed = {
-        title: "Bot's Uptime",
-        description: ```${uptime.hoursuptime > 9 }.minutesuptime.seconds```,
+        title: `Bot's Uptime`,
+        description: `${uptime.hours > 9 ? uptime.hours:'0'+uptime.hours}:${uptime.minutes > 9 ? uptime.minutes:'0'+uptime.minutes}:${uptime.seconds > 9 ? uptime.seconds:'0'+uptime.seconds}`,
         color: 0x7289DA,
         footer: {
           text: 'Requested by ' + msg.author.username,
