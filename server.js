@@ -86,7 +86,7 @@ if (msg.author.id !== '1193882484727885884') {
     } else {
     const embed = {
         title: 'Message logs',
-        description: "```" + messageHistory.join("\n") + "\nThese are the message logs. If you want to know the users, type <@(the numbers at the start)>.```",
+        description: "```" + messageHistory.join("\n") + "```\nThese are the message logs. If you want to know the users, type <@(User ID)>. (E.g `<@1234567890123456789>`)",
         color: 0x7289DA,
         footer: {
           text: 'Requested by ' + msg.author.username,
