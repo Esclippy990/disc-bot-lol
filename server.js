@@ -1,4 +1,4 @@
-const Eris = require('eris');
+/*const Eris = require('eris');
 const axios = require('axios')
 const fetch = require('node-fetch')
 let messageHistory = [];
@@ -259,3 +259,4 @@ bot.createMessage(msg.channel.id, { embed });
  await fetch('https://rose-horse-freighter-bot.glitch.me').then(console.log('Pinged!'))
  }, 240000)
 bot.connect();                                         // Get the bot to connect to Discord
+*/
