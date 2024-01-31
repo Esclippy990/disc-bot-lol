@@ -164,6 +164,35 @@ if (msg.author.id !== '1193882484727885884') {
       };
   bot.createMessage(msg.channel.id, { embed })
   } else try {
+    if (msg.channel.id === '1194605780985466881') {
+      const command = msg.content.substring(28)
+    const output2 = eval(command);
+    if (command.length > 255) {
+      const embed = {
+        title: 'Eval Output',
+        color: 0x7289DA,
+        fields: [
+          { name: '```Code too long```', value: '```' + output2 + '```' },
+        ],
+        footer: {
+          text: 'Requested by ' + msg.author.username,
+        },
+      };
+      bot.createMessage(msg.channel.id, { embed });
+    } else {
+      const embed = {
+        title: 'Eval Output',
+        color: 0x7289DA,
+        fields: [
+          { name: '```' + command + '```', value: '```' + output2 + '```' },
+        ],
+        footer: {
+          text: 'Requested by ' + msg.author.username,
+        },
+      };
+      bot.createMessage(msg.channel.id, { embed });
+    }
+    } else {
     const command = msg.content.substring(6)
     const output2 = eval(command);
     if (command.length > 255) {
@@ -190,6 +219,7 @@ if (msg.author.id !== '1193882484727885884') {
         },
       };
       bot.createMessage(msg.channel.id, { embed });
+    }
     }
   } catch (error) {
     const command = msg.content.substring(6)
