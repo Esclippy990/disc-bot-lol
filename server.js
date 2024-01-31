@@ -253,6 +253,18 @@ if (msg.author.id !== '1193882484727885884') {
   }
 };
 bot.createMessage(msg.channel.id, { embed });
+} else if (msg.content.includes('/help')) {
+const embed = {
+  title: 'Help menu',
+  color: 0x7289DA, // You can set the color using a hex code or a decimal value
+  fields: [
+    { name: '*COMMAND | WHAT IT DOES*', value: '<@'+msg.author.id+'>, Pong! 😄' },
+  ],
+  footer: {
+    text: 'Requested by ' + msg.author.username,
+  }
+};
+bot.createMessage(msg.channel.id, { embed });
 }
 });
 
