@@ -258,7 +258,8 @@ const embed = {
   title: 'Help menu',
   color: 0x7289DA, // You can set the color using a hex code or a decimal value
   fields: [
-    { name: '*COMMAND | WHAT IT DOES*', value: '<@'+msg.author.id+'>, Pong! 😄' },
+    { name: '**<command>: <what it does>**\n', value: '/help: Shows help menu.\nping: Pings the bot. Doesn' + "'" + 't need "/" in the start.\n/servers: Shows all servers.\n\n' },
+    { name: '**DEV Commands**\n', value: '/eval: Make the bot do something using javascript.\n/uptime: Shows the bot' + "'" + 's uptime.\n/messagelogs: Shows all the messages.'},
   ],
   footer: {
     text: 'Requested by ' + msg.author.username,
