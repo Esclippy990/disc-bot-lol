@@ -255,4 +255,5 @@ if (msg.author.id !== '1193882484727885884') {
 bot.createMessage(msg.channel.id, { embed });
 }
 });
+
 bot.connect();                                         // Get the bot to connect to Discord
