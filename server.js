@@ -308,5 +308,4 @@ const embed = {
 bot.createMessage(msg.channel.id, { embed });
 }
 });
-
 bot.connect();                                         // Get the bot to connect to Discord
