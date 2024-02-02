@@ -118,6 +118,33 @@ if (msg.author.id !== '1193882484727885884') {
       };
   bot.createMessage(msg.channel.id, { embed })
   }
+} else if (msg.content.includes('/players ')) {
+let test = msg.content.substring(9)
+let url
+switch(test){
+  case '#hv':
+  url = 'https://hvbutps.glitch.me/clientCount'
+  break;
+  case '#z':
+  url = 'https://hvbutpssandbox.glitch.me/clientCount'
+  break;
+}
+fetch(url)
+     .then(response => response.text())
+     .then(data => {
+       const embed = {
+        title: 'Player count of ' + test + ' (' + url + ')',
+        description: data,
+        color: 0x7289DA,
+        footer: {
+          text: 'Requested by ' + msg.author.username,
+        },
+      };
+  bot.createMessage(msg.channel.id, { embed })
+     })
+     .catch(error => {
+       console.error(error);
+     });
 } else if (msg.content.includes('/uptime')) {
   if (msg.author.id !== '1193882484727885884') {
   const embed = {
