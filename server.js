@@ -122,18 +122,20 @@ if (msg.author.id !== '1193882484727885884') {
 let test = msg.content.substring(9)
 let url
 switch(test){
-  case '#hv':
-  url = 'https://hvbutps.glitch.me/clientCount'
+  case '#us':
+  url = 'https://remarkable-serious-shark.glitch.me/mockups.json'
   break;
-  case '#z':
+  case '#em':
   url = 'https://hvbutpssandbox.glitch.me/clientCount'
   break;
+  default: url = ''
 }
+if (url !== '') {
 fetch(url)
      .then(response => response.text())
      .then(data => {
        const embed = {
-        title: 'Player count of ' + test + ' (' + url + ')',
+        title: 'Player count of ' + test,
         description: data,
         color: 0x7289DA,
         footer: {
@@ -145,6 +147,17 @@ fetch(url)
      .catch(error => {
        console.error(error);
      });
+} else {
+const embed = {
+        title: 'Error',
+        description: `Invalid server`,
+        color: 0xFF0000,
+        footer: {
+          text: 'Requested by ' + msg.author.username,
+        },
+      };
+  bot.createMessage(msg.channel.id, { embed })
+}
 } else if (msg.content.includes('/uptime')) {
   if (msg.author.id !== '1193882484727885884') {
   const embed = {
