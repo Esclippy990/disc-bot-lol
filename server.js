@@ -308,14 +308,4 @@ const embed = {
 bot.createMessage(msg.channel.id, { embed });
 }
 });
-setInterval(() => {
-fetch('https://rose-horse-freighter-bot.glitch.me')
-     .then(response => response.text())
-     .then(data => {
-       console.log(data)
-     })
-     .catch(error => {
-       console.error(error);
-     });
-}, 240000);
 bot.connect();                                         // Get the bot to connect to Discord
