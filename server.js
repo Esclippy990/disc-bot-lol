@@ -123,7 +123,7 @@ let test = msg.content.substring(9)
 let url
 switch(test){
   case '#us':
-  url = 'https://remarkable-serious-shark.glitch.me/mockups.json'
+  url = process.env.us + 'players'
   break;
   case '#em':
   url = 'https://hvbutpssandbox.glitch.me/clientCount'
