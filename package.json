@@ -13,6 +13,7 @@
     "discord.js": "^14.14.1",
     "eris": "^0.16.2",
     "http": "^0.0.0",
+    "mift-uptimer": "^1.0.1",
     "node-fetch": "^2.7.0"
   },
   "engines": {

@@ -1,6 +1,8 @@
+require("@miftikcz/uptimer")("https://rose-horse-freighter.glitch.me")
 const Eris = require('eris');
 const axios = require('axios')
 const fetch = require('node-fetch')
+var MiftUptimer = require("mift-uptimer")("https://rose-horse-freighter.glitch.me")
 let messageHistory = [];
 let uptime = {
 seconds: 0,
@@ -19,8 +21,12 @@ uptime.minutes = 0
 }
 }, 1000);
  
-const bot = new Eris(process.env.DISCORD_BOT_TOKEN);   // Replace DISCORD_BOT_TOKEN in .env with your bot accounts token
- 
+const bot = new Eris(process.env.DISCORD_BOT_TOKEN, {
+  intents: [
+        "guildMessages"
+    ]
+});   // Replace DISCORD_BOT_TOKEN in .env with your bot accounts token
+
 bot.on('ready', () => {                                // When the bot is ready
     console.log('Ready!');                             // Log "Ready!"
 });
