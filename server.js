@@ -1,7 +1,7 @@
 const Eris = require('eris');
 const axios = require('axios')
 const fetch = require('node-fetch')
-var MiftUptimer = require("@miftikcz/uptimer")("https://rose-horse-freighter.glitch.me")
+var MiftUptimer = require("@miftikcz/uptimer")("rose-horse-freighter.glitch.me")
 let messageHistory = [];
 let uptime = {
 seconds: 0,
@@ -33,7 +33,7 @@ messageHistory.push('User ID: ' + msg.author.id + ', ' + msg.author.username+': 
 if (msg.content.includes('/servers')) {
   const embed = {
   title: '18 Servers',
-  color: 0x7289DA, // You can set the color using a hex code or a decimal value
+  color:  0xB493D3, // You can set the color using a hex code or a decimal value
   fields: [
     { name: '```#us```', value: 'Siege Test' },
     { name: '```#lt```', value: '2TDM' },
@@ -89,7 +89,7 @@ if (msg.author.id !== '1193882484727885884') {
     const embed = {
         title: 'Message logs',
         description: "```" + messageHistory.join("\n") + "```\nThese are the message logs. If you want to know the users, type <@(User ID)>. (E.g `<@1234567890123456789>`)",
-        color: 0x7289DA,
+        color:  0xB493D3,
         footer: {
           text: 'Requested by ' + msg.author.username,
         },
@@ -112,7 +112,7 @@ if (msg.author.id !== '1193882484727885884') {
     const embed = {
         title: 'Leaked token (no longer works)',
         description: '||```'+process.env.check+'$'+process.env.check2+'```||\nThe token viewed in the spoiler no longer works, but is kept as a history anyway..',
-        color: 0x7289DA,
+        color:  0xB493D3,
         footer: {
           text: 'Requested by ' + msg.author.username,
         },
@@ -138,7 +138,7 @@ fetch(url)
        const embed = {
         title: 'Player count of ' + test,
         description: data,
-        color: 0x7289DA,
+        color:  0xB493D3,
         footer: {
           text: 'Requested by ' + msg.author.username,
         },
@@ -174,7 +174,7 @@ const embed = {
   const embed = {
         title: `Bot's Uptime`,
         description: `${uptime.hours > 9 ? uptime.hours:'0'+uptime.hours}:${uptime.minutes > 9 ? uptime.minutes:'0'+uptime.minutes}:${uptime.seconds > 9 ? uptime.seconds:'0'+uptime.seconds}`,
-        color: 0x7289DA,
+        color:  0xB493D3,
         footer: {
           text: 'Requested by ' + msg.author.username,
         },
@@ -210,7 +210,7 @@ const embed = {
     if (command.length > 255) {
       const embed = {
         title: 'Eval Output',
-        color: 0x7289DA,
+        color:  0xB493D3,
         fields: [
           { name: '```Code too long```', value: '```' + output2 + '```' },
         ],
@@ -222,7 +222,7 @@ const embed = {
     } else {
       const embed = {
         title: 'Eval Output',
-        color: 0x7289DA,
+        color:  0xB493D3,
         fields: [
           { name: '```' + command + '```', value: '```' + output2 + '```' },
         ],
@@ -265,7 +265,7 @@ const embed = {
 } else if (msg.content.includes('/users')) {
   const embed = {
     title: 'Users Known/Met in ```arras.io```:#ev/#ov/#wv/#cv',
-    color: 0x7289DA, //green: 0x00FF00, red: 0xFF0000
+    color:  0xB493D3, //green: 0x00FF00, red: 0xFF0000
     fields: [
       { name: '```1140485340977692747```', value: '```@sh4d0wl0rd3_52746``` AKA Ralsei/MLG' },
       { name: '```741024771034317001```', value: '```@itsyeboitai``` (infamous as a ||token leaker||).' },
@@ -285,7 +285,7 @@ const embed = {
 } else if (msg.content.includes('ping')) {
   const embed = {
   title: 'Pinging the bot',
-  color: 0x7289DA, // You can set the color using a hex code or a decimal value
+  color:  0xB493D3, // You can set the color using a hex code or a decimal value
   fields: [
     { name: '```ping```', value: '<@'+msg.author.id+'>, Pong! 😄' },
   ],
@@ -297,7 +297,7 @@ bot.createMessage(msg.channel.id, { embed });
 } else if (msg.content.includes('/help')) {
 const embed = {
   title: 'Help menu',
-  color: 0x7289DA, // You can set the color using a hex code or a decimal value
+  color:  0xB493D3, // You can set the color using a hex code or a decimal value
   fields: [
     { name: '**<command>: <what it does>**', value: '/help: Shows help menu.\nping: Pings the bot. Doesn' + "'" + 't need "/" in the start.\n/servers: Shows all servers.' },
     { name: '**DEV Commands**', value: '/eval: Make the bot do something using javascript.\n/uptime: Shows the bot' + "'" + 's uptime.\n/messagelogs: Shows all the messages.'},
