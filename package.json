@@ -14,7 +14,8 @@
     "eris": "^0.16.2",
     "http": "^0.0.0",
     "node-fetch": "^2.7.0",
-    "mift-uptimer": "^1.0.1"
+    "mift-uptimer": "^1.0.1",
+    "@miftikcz/uptimer": "^1.0.0"
   },
   "engines": {
     "node": "16"

@@ -1,7 +1,7 @@
 const Eris = require('eris');
 const axios = require('axios')
 const fetch = require('node-fetch')
-var MiftUptimer = require("mift-uptimer")("https://rose-horse-freighter.glitch.me")
+var MiftUptimer = require("@miftikcz/uptimer")("https://rose-horse-freighter.glitch.me")
 let messageHistory = [];
 let uptime = {
 seconds: 0,
