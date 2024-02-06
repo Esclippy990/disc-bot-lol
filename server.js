@@ -212,7 +212,7 @@ const embed = {
         title: 'Eval Output',
         color:  0xB493D3,
         fields: [
-          { name: '```Code too long```', value: '```' + output2 + '```' },
+          { name: '```Code too long```', value: '```js\n' + output2 + '```' },
         ],
         footer: {
           text: 'Requested by ' + msg.author.username,
@@ -224,7 +224,7 @@ const embed = {
         title: 'Eval Output',
         color:  0xB493D3,
         fields: [
-          { name: '```' + command + '```', value: '```' + output2 + '```' },
+          { name: '```' + command + '```', value: '```js\n' + output2 + '```' },
         ],
         footer: {
           text: 'Requested by ' + msg.author.username,
@@ -239,7 +239,7 @@ const embed = {
       title: 'Error',
       color: 0xFF0000,
       fields: [
-        { name: '```Code too long```', value: '```' + error.message + '```' },
+        { name: '```Code too long```', value: '```js\n' + error.message + '```' },
       ],
       footer: {
         text: 'Requested by ' + msg.author.username,
@@ -252,7 +252,7 @@ const embed = {
       title: 'Error',
       color: 0xFF0000,
       fields: [
-        { name: '```'+command+'```', value: '```' + error.message + '```' },
+        { name: '```'+command+'```', value: '```js\n' + error.message + '```' },
       ],
       footer: {
         text: 'Requested by ' + msg.author.username,
