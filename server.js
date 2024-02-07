@@ -1,4 +1,4 @@
-const Eris = require('eris');
+/*const Eris = require('eris');
 const axios = require('axios')
 const fetch = require('node-fetch')
 var MiftUptimer = require("@miftikcz/uptimer")("rose-horse-freighter.glitch.me")
@@ -309,4 +309,4 @@ const embed = {
 bot.createMessage(msg.channel.id, { embed });
 }
 });
-bot.connect();                                         // Get the bot to connect to Discord
+bot.connect();                                         // Get the bot to connect to Discord*/
