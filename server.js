@@ -309,3 +309,10 @@ bot.createMessage(msg.channel.id, { embed });
 }
 });
 bot.connect();                                         // Get the bot to connect to Discord
+const http = require('http')
+let server = http.createServer((req, res) => {
+if (req.url.startsWith('/')) {
+  res.writeHead(200)
+  res.end('hi')
+  }
+})
