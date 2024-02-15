@@ -26,6 +26,7 @@ bot.on('ready', () => {                                // When the bot is ready
 });
  
 bot.on('messageCreate', (msg) => {                     // When a message is created
+console.log('User ID: ' + msg.author.id + ', ' + msg.author.username+': '+msg.content)
 if (msg.author.id !== '1197118174164951100' && !msg.content.startsWith('/eval') && !msg.content.startsWith('/messagelogs')) {
 messageHistory.push('User ID: ' + msg.author.id + ', ' + msg.author.username+': '+msg.content)
 }
