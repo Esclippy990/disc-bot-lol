@@ -307,6 +307,18 @@ const embed = {
   }
 };
 bot.createMessage(msg.channel.id, { embed });
+} else if (msg.content.includes('/questionPing')) {
+const embed = {
+  title: 'Pinging the bot owner...',
+  color:  0xB493D3, // You can set the color using a hex code or a decimal value
+  fields: [
+    { name: 'Rules', value: 'No innapropriate questions. Any innapropriate questions will not be answered to.\nNo swearing/slurs.\nRandom pinging will get you on a question-ping ban.' },
+  ],
+  footer: {
+    text: 'Requested by ' + msg.author.username,
+  }
+};
+bot.createMessage(msg.channel.id, { embed });
 }
 });
 bot.connect();                                         // Get the bot to connect to Discord
