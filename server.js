@@ -1,6 +1,7 @@
 const Eris = require('eris');
 const axios = require('axios')
 const fetch = require('node-fetch')
+const keep_alive = require('keep_alive')
 let messageHistory = [];
 let uptime = {
 seconds: 0,
