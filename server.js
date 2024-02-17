@@ -306,7 +306,7 @@ const embed = {
 bot.createMessage(msg.channel.id, { embed });
 } else if (msg.content.includes('/questionPing ')) {
 const theQuestion = msg.content.substring(14);
-const embed = {
+let embed = {
   title: 'Pinging the bot owner...',
   color:  0xB493D3, // You can set the color using a hex code or a decimal value
   fields: [
@@ -316,7 +316,8 @@ const embed = {
     text: 'Requested by ' + msg.author.username,
   }
 };
-const embedQuestion = {
+bot.createMessage(msg.channel.id, { embed });
+embed = {
   title: 'Question ping',
   description: 'Hey <@1193882484727885884>, someone has asked you a question about the bot.',
   color:  0xB493D3, // You can set the color using a hex code or a decimal value
@@ -330,8 +331,7 @@ const embedQuestion = {
     text: 'Requested by ' + msg.author.username,
   }
 };
-bot.createMessage(msg.channel.id, { embed });
-bot.createMessage('1197123611559997460', { embedQuestion })
+bot.createMessage('1197123611559997460', { embed })
 }
 });
 bot.connect();                                         // Get the bot to connect to Discord
