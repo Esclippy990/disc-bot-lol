@@ -303,7 +303,8 @@ const embed = {
   }
 };
 bot.createMessage(msg.channel.id, { embed });
-} else if (msg.content.includes('/questionPing')) {
+} else if (msg.content.includes('/questionPing ')) {
+const theQuestion = msg.content.substring(14);
 const embed = {
   title: 'Pinging the bot owner...',
   color:  0xB493D3, // You can set the color using a hex code or a decimal value
@@ -315,6 +316,7 @@ const embed = {
   }
 };
 bot.createMessage(msg.channel.id, { embed });
+bot.createMessage('1197123611559997460', 'Hey <@1193882484727885884>, someone has asked you a question.\nName: <@' + msg.author.id + '>, channel ID: ' + msg.channel.id + `, person's id: ` + msg.author.id + `. Question: \n`+the)
 }
 });
 bot.connect();                                         // Get the bot to connect to Discord
