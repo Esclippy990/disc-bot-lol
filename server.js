@@ -315,8 +315,22 @@ const embed = {
     text: 'Requested by ' + msg.author.username,
   }
 };
+const embedQuestion = {
+  title: 'Question ping',
+  description: 'Hey <@1193882484727885884>, someone has asked you a question about the bot.',
+  color:  0xB493D3, // You can set the color using a hex code or a decimal value
+  fields: [
+    { name: 'Name', value: '<@'+msg.author.id+'>' },
+    { name: 'Channel ID', value: msg.channel.id },
+    { name: `Messager's user ID`, value: msg.author.id },
+    { name: 'Question', value: theQuestion },
+  ],
+  footer: {
+    text: 'Requested by ' + msg.author.username,
+  }
+};
 bot.createMessage(msg.channel.id, { embed });
-bot.createMessage('1197123611559997460', 'Hey <@1193882484727885884>, someone has asked you a question.\nName: <@' + msg.author.id + '>, channel ID: ' + msg.channel.id + `, person's id: ` + msg.author.id + `. Question: \n`+the)
+bot.createMessage('1197123611559997460', { embedQuestion })
 }
 });
 bot.connect();                                         // Get the bot to connect to Discord
