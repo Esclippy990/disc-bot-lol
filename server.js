@@ -336,16 +336,6 @@ embed = {
 };
 bot.createMessage('1197123611559997460', { embed })
 }
- } else {
- let embed = {
-  title: 'Report reason is blank',
-  description: `The report you said is currently blank. Please enter a report description.`,
-  color:  0xFF0000, // You can set the color using a hex code or a decimal value
-  footer: {
-    text: 'Requested by ' + msg.author.username,
-  }
-};
-bot.createMessage(msg.channel.id, { embed })
  }
 });
 bot.connect();                                         // Get the bot to connect to Discord
