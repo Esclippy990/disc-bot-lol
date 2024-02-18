@@ -3,6 +3,7 @@ const axios = require('axios')
 const fetch = require('node-fetch')
 const keep_alive = require('./keep_alive')
 let messageHistory = [];
+let reportBans = [];
 let uptime = {
 seconds: 0,
 minutes: 0,
@@ -296,7 +297,7 @@ const embed = {
   title: 'Help menu',
   color:  0xB493D3, // You can set the color using a hex code or a decimal value
   fields: [
-    { name: '**<command>: <what it does>**', value: '/help: Shows help menu.\nping: Pings the bot. Doesn' + "'" + 't need "/" in the start.\n/servers: Shows all servers.' },
+    { name: '**<command>: <what it does>**', value: '/help: Shows help menu.\nping: Pings the bot. Doesn' + "'" + 't need "/" in the start.\n/servers: Shows all servers.\n/report: Reports a bug. Requires description and how to reoccur it.' },
     { name: '**DEV Commands**', value: '/eval: Make the bot do something using javascript.\n/uptime: Shows the bot' + "'" + 's uptime.\n/messagelogs: Shows all the messages.'},
   ],
   footer: {
@@ -304,35 +305,48 @@ const embed = {
   }
 };
 bot.createMessage(msg.channel.id, { embed });
-} else if (msg.content.includes('/questionPing ')) {
-const theQuestion = msg.content.substring(14);
+} else if (msg.content.includes('/report') && !reportBans.includes(msg.author.id)) {
+const theReport = msg.content.substring(14);
+if (theReport) {
 let embed = {
-  title: 'Pinging the bot owner...',
-  color:  0xB493D3, // You can set the color using a hex code or a decimal value
+  title: 'Bug reported',
+  color:  0xFFFF00, // You can set the color using a hex code or a decimal value
   fields: [
-    { name: 'Rules', value: 'No innapropriate questions. Any innapropriate questions will not be answered to.\nNo swearing/slurs.\nRandom pinging will get you on a question-ping ban.' },
+    { name: 'Rules', value: 'No innapropriate content. Any innapropriate content in the report description which is unreasonable, will not be paid attention to.\nNo swearing/slurs.\nIf you do random reporting & if we think it' + "'" +'s unreasonable, we will get you on a report ban.' },
+    { name: 'Consequences of breaking the rules', value: '1. You will be warned.\n2. The steps shown above will be taken.' },
   ],
   footer: {
-    text: 'Requested by ' + msg.author.username,
+    text: 'Reported by ' + msg.author.username,
   }
 };
 bot.createMessage(msg.channel.id, { embed });
 embed = {
-  title: 'Question ping',
-  description: 'Hey <@1193882484727885884>, someone has asked you a question about the bot.',
-  color:  0xB493D3, // You can set the color using a hex code or a decimal value
+  title: 'Report',
+  description: 'Hey <@1193882484727885884>, someone has bug-reported.',
+  color:  0xFFFF00, // You can set the color using a hex code or a decimal value
   fields: [
     { name: 'Name', value: '<@'+msg.author.id+'>' },
     { name: 'Channel ID', value: msg.channel.id },
     { name: `Messager's user ID`, value: msg.author.id },
-    { name: 'Question', value: theQuestion },
+    { name: 'Report reason', value: theReport },
   ],
   footer: {
-    text: 'Requested by ' + msg.author.username,
+    text: 'Reported by ' + msg.author.username,
   }
 };
 bot.createMessage('1197123611559997460', { embed })
 }
+ } else {
+ let embed = {
+  title: 'Report reason is blank',
+  description: `The report you said is currently blank. Please enter a report description.`,
+  color:  0xFF0000, // You can set the color using a hex code or a decimal value
+  footer: {
+    text: 'Requested by ' + msg.author.username,
+  }
+};
+bot.createMessage(msg.channel.id, { embed })
+ }
 });
 bot.connect();                                         // Get the bot to connect to Discord
 const http = require('http')
