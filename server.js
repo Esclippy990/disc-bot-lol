@@ -306,7 +306,7 @@ const embed = {
 };
 bot.createMessage(msg.channel.id, { embed });
 } else if (msg.content.includes('/report') && !reportBans.includes(msg.author.id)) {
-const theReport = msg.content.substring(14);
+const theReport = msg.content.substring(8);
 if (theReport) {
 let embed = {
   title: 'Bug reported',
@@ -335,6 +335,16 @@ embed = {
   }
 };
 bot.createMessage('1197123611559997460', { embed })
+} else {
+let embed = {
+  title: 'Report description is blank',
+  description: 'The report you said is currently blank. Please enter a report description.',
+  color:  0xFF0000, // You can set the color using a hex code or a decimal value
+  footer: {
+    text: 'Requested by ' + msg.author.username,
+  }
+};
+bot.createMessage(msg.channel.id, { embed })
 }
  }
 });
