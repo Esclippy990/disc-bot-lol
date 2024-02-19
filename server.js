@@ -349,10 +349,10 @@ bot.createMessage(msg.channel.id, { embed })
  }
 });
 bot.connect();                                         // Get the bot to connect to Discord
-const http = require('http')
-let server = http.createServer((req, res) => {
-if (req.url.startsWith('/')) {
-  res.writeHead(200)
-  res.end('hi')
-  }
-})
+let channelID = document.getElementById("channelID").value
+let message = document.getElementById("message").value
+document.getElementById("send-message").onclick = () => {
+if (message !== '' && channelID !== '') {
+bot.createMessage(channelID, message)
+}
+}
