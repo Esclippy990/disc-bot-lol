@@ -204,6 +204,9 @@ const embed = {
   bot.createMessage(msg.channel.id, { embed })
   } else try {
     const command = msg.content.substring(6)
+   if (msg.channel.id === '1197117302546640976') {
+    command = msg.content.substring(23)
+   }
     const output2 = eval(command);
     if (command.length > 255) {
       const embed = {
