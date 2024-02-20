@@ -180,19 +180,7 @@ const embed = {
   bot.createMessage(msg.channel.id, { embed })
   }
 } else if (msg.content.includes('/eval')) {
-  if (msg.channel.id === '1194605780985466884') {
-    const embed = {
-        title: 'Error',
-        color: 0xFF0000,
-        fields: [
-          { name: 'The eval command can only be used in direct messages', value: `To prevent crashes, the eval command can only be used in the bot's DMS.` },
-        ],
-        footer: {
-          text: 'Requested by ' + msg.author.username,
-        },
-      };
-  bot.createMessage(msg.channel.id, { embed })
-  } else if (msg.author.id !== '1193882484727885884') {
+if (msg.author.id !== '1193882484727885884') {
   const embed = {
         title: 'Error',
         description: `the eval command can only be used by the bot's owner`,
