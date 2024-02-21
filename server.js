@@ -179,7 +179,7 @@ const embed = {
       };
   bot.createMessage(msg.channel.id, { embed })
   }
-} else if (message.content.startsWith('/exec')) {
+} else if (msg.content.startsWith('/exec')) {
  if (msg.author.id !== '1193882484727885884') {
   const embed = {
         title: 'Error',
