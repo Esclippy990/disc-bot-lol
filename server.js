@@ -201,7 +201,7 @@ exec(command, (error, stdout, stderr) => {
         title: 'Execute Output',
         color:  0xFFFF00,
         fields: [
-          { name: '```Code too long```', value: '```bash\n'+error+'\n'+output2+'```' },
+          { name: '```Code too long```', value: '```bash\n'+error+'\n'+stdout+'```' },
         ],
         footer: {
           text: 'Requested by ' + msg.author.username,
@@ -213,7 +213,7 @@ exec(command, (error, stdout, stderr) => {
         title: 'Execute Output',
         color:  0xFFFF00,
         fields: [
-          { name: '```'+command+'```', value: '```bash\n'+error+'\n'+output2+'```' },
+          { name: '```'+command+'```', value: '```bash\n'+error+'\n'+stdout+'```' },
         ],
         footer: {
           text: 'Requested by ' + msg.author.username,
@@ -227,7 +227,7 @@ exec(command, (error, stdout, stderr) => {
         title: 'Execute Output',
         color:  0xB493D3,
         fields: [
-          { name: '```Code too long```', value: '```bash\n' + output2 + '```' },
+          { name: '```Code too long```', value: '```bash\n' + stdout + '```' },
         ],
         footer: {
           text: 'Requested by ' + msg.author.username,
