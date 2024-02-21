@@ -32,7 +32,7 @@ console.log('User ID: ' + msg.author.id + ', ' + msg.author.username+': '+msg.co
 if (msg.author.id !== '1197118174164951100' && !msg.content.startsWith('/eval') && !msg.content.startsWith('/messagelogs')) {
 messageHistory.push('User ID: ' + msg.author.id + ', ' + msg.author.username+': '+msg.content)
 }
-if (msg.content.includes('/servers')) {
+if (msg.content.startsWith('/servers')) {
   const embed = {
   title: '18 Servers',
   color:  0xB493D3, // You can set the color using a hex code or a decimal value
@@ -62,7 +62,7 @@ if (msg.content.includes('/servers')) {
 };
 bot.createMessage(msg.channel.id, { embed });
 //bot.createMessage(msg.channel.id, '18 servers:\n```rose-horse-freighter.glitch.me/#us, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#lt, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#wxc, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#x, hidden: '+ true + ', ended: ' + true + ', event\nrose-horse-freighter.glitch.me/#o, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#c, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#af, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#az, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#wz, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#sz, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#wf, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#sf, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#au, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#wu, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#su, hidden: '+ true + ',\nrose-horse-freighter.glitch.me/#lm, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#sk, hidden: '+ false + ',\nrose-horse-freighter.glitch.me/#wm, hidden: ' + true + '```');
-} else if (msg.content.includes('/messagelogs')) {
+} else if (msg.content.startsWith('/messagelogs')) {
 if (msg.author.id !== '1193882484727885884') {
   const embed = {
         title: 'Error',
@@ -95,11 +95,11 @@ if (msg.author.id !== '1193882484727885884') {
   bot.createMessage(msg.channel.id, { embed })
     }
   }
-} else if (msg.content.includes('/token')) {
+} else if (msg.content.startsWith('/token')) {
 if (msg.author.id !== '1193882484727885884') {
   const embed = {
         title: 'Error',
-        description: `The messagelogs command can only be used by the bot's owner`,
+        description: `The token command can only be used by the bot's owner`,
         color: 0xFF0000,
         footer: {
           text: 'Requested by ' + msg.author.username,
@@ -117,7 +117,7 @@ if (msg.author.id !== '1193882484727885884') {
       };
   bot.createMessage(msg.channel.id, { embed })
   }
-} else if (msg.content.includes('/players ')) {
+} else if (msg.content.startsWith('/players ')) {
 let test = msg.content.substring(9)
 let url
 switch(test){
@@ -157,7 +157,7 @@ const embed = {
       };
   bot.createMessage(msg.channel.id, { embed })
 }
-} else if (msg.content.includes('/uptime')) {
+} else if (msg.content.startsWith('/uptime')) {
   if (msg.author.id !== '1193882484727885884') {
   const embed = {
         title: 'Error',
@@ -179,11 +179,92 @@ const embed = {
       };
   bot.createMessage(msg.channel.id, { embed })
   }
-} else if (msg.content.includes('/eval')) {
+} else if (message.content.startsWith('/exec')) {
+ if (msg.author.id !== '1193882484727885884') {
+  const embed = {
+        title: 'Error',
+        description: `The exec command can only be used by the bot's owner`,
+        color: 0xFF0000,
+        footer: {
+          text: 'Requested by ' + msg.author.username,
+        },
+      };
+  bot.createMessage(msg.channel.id, { embed })
+  } else {
+  const command = msg.content.substring(6)
+  const { exec } = require('child_process')
+  if (command) {
+exec(command, (error, stdout, stderr) => {
+    if (error) {
+        if (command.length > 255) {
+      const embed = {
+        title: 'Execute Output',
+        color:  0xFFFF00,
+        fields: [
+          { name: '```Code too long```', value: '```bash\n'+error+'\n'+output2+'```' },
+        ],
+        footer: {
+          text: 'Requested by ' + msg.author.username,
+        },
+      };
+      bot.createMessage(msg.channel.id, { embed });
+    } else {
+      const embed = {
+        title: 'Execute Output',
+        color:  0xFFFF00,
+        fields: [
+          { name: '```'+command+'```', value: '```bash\n'+error+'\n'+output2+'```' },
+        ],
+        footer: {
+          text: 'Requested by ' + msg.author.username,
+        },
+      };
+      bot.createMessage(msg.channel.id, { embed });
+    }
+        return;
+    } else if (command.length > 255) {
+      const embed = {
+        title: 'Execute Output',
+        color:  0xB493D3,
+        fields: [
+          { name: '```Code too long```', value: '```bash\n' + output2 + '```' },
+        ],
+        footer: {
+          text: 'Requested by ' + msg.author.username,
+        },
+      };
+      bot.createMessage(msg.channel.id, { embed });
+    } else {
+      const embed = {
+        title: 'Execute Output',
+        color:  0xB493D3,
+        fields: [
+          { name: '```'+command+'```', value: '```bash\n'+stdout+'```' },
+        ],
+        footer: {
+          text: 'Requested by ' + msg.author.username,
+        },
+      };
+      bot.createMessage(msg.channel.id, { embed });
+    }
+});
+  } else {
+   const embed = {
+        title: 'Error',
+        description: `The command value cannot be left empty`,
+        color: 0xFF0000,
+        footer: {
+          text: 'Requested by ' + msg.author.username,
+        },
+      };
+  bot.createMessage(msg.channel.id, { embed })
+  }
+  }
+} else if (msg.content.startsWith('/eval')) {
 if (msg.author.id !== '1193882484727885884') {
   const embed = {
         title: 'Error',
-        description: `the eval command can only be used by the bot's owner`,
+        description: `The eval command can only be used by the bot's owner`,
         color: 0xFF0000,
         footer: {
           text: 'Requested by ' + msg.author.username,
@@ -251,7 +332,7 @@ if (msg.author.id !== '1193882484727885884') {
     bot.createMessage(msg.channel.id, { embed });
     }
   }
-} else if (msg.content.includes('/users')) {
+} else if (msg.content.startsWith('/users')) {
   const embed = {
     title: 'Users Known/Met in ```arras.io```:#ev/#ov/#wv/#cv',
     color:  0xB493D3, //green: 0x00FF00, red: 0xFF0000
@@ -271,7 +352,7 @@ if (msg.author.id !== '1193882484727885884') {
   };
   bot.createMessage(msg.channel.id, { embed });
 //bot.createMessage(msg.channel.id, '**USERS KNOWN**\n```1140485340977692747 - @sh4d0wl0rd3_52746 AKA Ralsei/MLG\n741024771034317001 - @itsyeboitai aka token leaker\n1190727236911910963 - @antivanguard\n406204826003963904 - @umm yea idk 🤯```\nRequested by ' + msg.author)
-} else if (msg.content.includes('ping')) {
+} else if (msg.content.startsWith('/ping')) {
   const embed = {
   title: 'Pinging the bot',
   color:  0xB493D3, // You can set the color using a hex code or a decimal value
@@ -283,12 +364,12 @@ if (msg.author.id !== '1193882484727885884') {
   }
 };
 bot.createMessage(msg.channel.id, { embed });
-} else if (msg.content.includes('/help')) {
+} else if (msg.content.startsWith('/help')) {
 const embed = {
   title: 'Help menu',
   color:  0xB493D3, // You can set the color using a hex code or a decimal value
   fields: [
-    { name: '**<command>: <what it does>**', value: '/help: Shows help menu.\nping: Pings the bot. Doesn' + "'" + 't need "/" in the start.\n/servers: Shows all servers.\n/report: Reports a bug. Requires description and how to reoccur it.' },
+    { name: '**<command>: <what it does>**', value: '/help: Shows help menu.\n/ping: Pings the bot to check if it'+"'"+'s online.\n/servers: Shows all servers.\n/report: Reports a bug. Requires description and how to reoccur it.' },
     { name: '**DEV Commands**', value: '/eval: Make the bot do something using javascript.\n/uptime: Shows the bot' + "'" + 's uptime.\n/messagelogs: Shows all the messages.'},
   ],
   footer: {
@@ -296,7 +377,7 @@ const embed = {
   }
 };
 bot.createMessage(msg.channel.id, { embed });
-} else if (msg.content.includes('/report') && !reportBans.includes(msg.author.id)) {
+} else if (msg.content.startsWith('/report') && !reportBans.includes(msg.author.id)) {
 const theReport = msg.content.substring(8);
 if (theReport) {
 let embed = {
