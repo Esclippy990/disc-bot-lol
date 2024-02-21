@@ -199,7 +199,7 @@ exec(command, (error, stdout, stderr) => {
         if (command.length > 255) {
       const embed = {
         title: 'Execute Output',
-        color:  0xFFFF00,
+        color:  0xFFA500,
         fields: [
           { name: '```Code too long```', value: '```bash\n'+error+'\n'+stdout+'```' },
         ],
@@ -211,7 +211,7 @@ exec(command, (error, stdout, stderr) => {
     } else {
       const embed = {
         title: 'Execute Output',
-        color:  0xFFFF00,
+        color:  0xFFA500,
         fields: [
           { name: '```'+command+'```', value: '```bash\n'+error+'\n'+stdout+'```' },
         ],
