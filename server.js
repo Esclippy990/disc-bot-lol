@@ -290,11 +290,11 @@ if (msg.author.id !== '1193882484727885884') {
   } else {
   const embed = {
         title: 'Error',
-        description: "The status you provided (`"+statusToSet+"`) is invalid"
+        description: "The status you provided (`"+statusToSet+"`) is invalid",
         color:  0xFF0000,
         fields: [
           { name: 'Status that you can set', value: '1. online :green_circle:\n2. idle :crescent_moon:\n3. dnd :no_entry: (Do Not Disturb)\n4. invisible :black_circle: (offline)' },
-          { name: 'NOTE', value: "Setting the bot's status to `invisible` (offline) will not make the bot actually go offline, and just make the visibility as offline." }
+          { name: 'NOTE', value: "Setting the bot's status to `invisible` (offline) will not make the bot actually go offline, and just make the visibility as offline." },
         ],
         footer: {
           text: 'Requested by ' + msg.author.username,
