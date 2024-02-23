@@ -263,6 +263,26 @@ exec(command, (error, stdout, stderr) => {
   bot.createMessage(msg.channel.id, { embed })
   }
   }
+} else if (msg.content.startsWith('/setstatus')) {
+if (msg.author.id !== '1193882484727885884') {
+  const embed = {
+        title: 'Error',
+        description: `The setstatus command can only be used by the bot's owner`,
+        color: 0xFF0000,
+        footer: {
+          text: 'Requested by ' + msg.author.username,
+        },
+      };
+  bot.createMessage(msg.channel.id, { embed })
+  } else {
+  const statusToSet = msg.content.substring(10);
+  if (statusToSet === 'online' || statusToSet === 'invisible' || statusToSet === 'idle' || statusToSet === 'dnd') {
+  bot.editStatus(statusToSet);
+  bot.createMessage(msg.channel.id, "> Set the bot's status to `" + statusToSet + "`.\nRequested by "+msg.author.username)
+  } else {
+  bot.createMessage(msg.channel.id, "> <@"+msg.author.id+">, the status you provided is invalid! Please provide a valid status.\n**Status that you can set:**\n1. online\n2. idle\n3. dnd (Do not disturb)\n4. invisible (offline)\n\n**NOTE**\nSetting the bot's status to `invisible` (offline) will not make the bot actually go offline, and just make the visibility as offline.")
+  }
+  }
 } else if (msg.content.startsWith('/eval')) {
 if (msg.author.id !== '1193882484727885884') {
   const embed = {
