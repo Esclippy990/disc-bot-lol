@@ -124,8 +124,11 @@ switch(test){
   case '#us':
   url = process.env.us + 'players'
   break;
-  case '#em':
-  url = 'https://hvbutpssandbox.glitch.me/clientCount'
+  case '#wm':
+  url = 'https://grass-awesome-care.glitch.me/players'
+  break;
+ case '#af':
+  url = 'https://ruddy-aromatic-authorization.glitch.me/players'
   break;
   default: url = ''
 }
