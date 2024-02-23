@@ -275,12 +275,32 @@ if (msg.author.id !== '1193882484727885884') {
       };
   bot.createMessage(msg.channel.id, { embed })
   } else {
-  const statusToSet = msg.content.substring(10);
+  const statusToSet = msg.content.substring(11);
   if (statusToSet === 'online' || statusToSet === 'invisible' || statusToSet === 'idle' || statusToSet === 'dnd') {
   bot.editStatus(statusToSet);
-  bot.createMessage(msg.channel.id, "> Set the bot's status to `" + statusToSet + "`.\nRequested by "+msg.author.username)
+   const embed = {
+        title: `Bot's status changed`,
+        description: "Changed the bot's status to `" + statusToSet + "`.",
+        color: 0xB493D3,
+        footer: {
+          text: 'Requested by ' + msg.author.username,
+        },
+      };
+  bot.createMessage(msg.channel.id, { embed });
   } else {
-  bot.createMessage(msg.channel.id, "> <@"+msg.author.id+">, the status you provided is invalid! Please provide a valid status.\n**Status that you can set:**\n1. online\n2. idle\n3. dnd (Do not disturb)\n4. invisible (offline)\n\n**NOTE**\nSetting the bot's status to `invisible` (offline) will not make the bot actually go offline, and just make the visibility as offline.")
+  const embed = {
+        title: 'Error',
+        description: "The status you provided (`"+statusToSet+"`) is invalid"
+        color:  0xFF0000,
+        fields: [
+          { name: 'Status that you can set', value: '1. online :green_circle:\n2. idle :crescent_moon:\n3. dnd :no_entry: (Do Not Disturb)\n4. invisible :black_circle: (offline)' },
+          { name: 'NOTE', value: "Setting the bot's status to `invisible` (offline) will not make the bot actually go offline, and just make the visibility as offline." }
+        ],
+        footer: {
+          text: 'Requested by ' + msg.author.username,
+        },
+      };
+ bot.createMessage(msg.channel.id, { embed });
   }
   }
 } else if (msg.content.startsWith('/eval')) {
